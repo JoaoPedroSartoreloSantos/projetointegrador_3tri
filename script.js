@@ -1,5 +1,5 @@
 (function(){
-var D=[["Informática",52,"Laboratório de informática"],["Sala do 2º ano C",55,"Sala de aula"],["Aula vaga do 2º ano de Administração",65,"Aula vaga, sem professor"],["Educação Física do 9º ano",69,"Aula de Educação Física"],["Sala vazia do 2º ano A",50,"Sala sem alunos"],["Secretaria",48,"Ambiente administrativo"],["Quadra aberta no recreio",80,"Recreio em espaço aberto"]];
+var D=[["Informática",52,"Alunos quietos digitando"],["Sala do 2º ano C",55,"Apresentação baixa em sala"],["Aula vaga do 2º ano de Administração",65,"Turma fora da sala em aula vaga"],["Educação Física do 9º ano",69,"Alunos jogando bola"],["Sala vazia do 2º ano A",50,"Sala completamente vazia de pessoas"],["Secretaria",48,"Ambiente Administrativo"],["Quadra aberta no recreio",80,"Apresentação de um grupo da escola (VillaAfro) na quadra aberta"]];
 var tb=document.querySelector("#dbT tbody"),bars=document.getElementById("dbBars");
 D.forEach(function(r,n){
   var tr=document.createElement("tr");
