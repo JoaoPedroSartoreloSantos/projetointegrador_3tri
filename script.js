@@ -134,30 +134,55 @@ var mi=document.getElementById("mIn"),mo=document.getElementById("mOut");
 function upd(){mo.textContent=morse(mi.value);}
 mi.oninput=upd;upd();
 
-// Lógica para abrir imagens em tela cheia (Modal) na aba Resumo
-document.addEventListener("click", function(e) {
-  if (e.target.classList.contains("zoomable-img")) {
-    var modal = document.getElementById("imgModal");
-    var modalImg = document.getElementById("modalImg");
-    var caption = document.getElementById("modalCaption");
-    modal.style.display = "flex";
-    modalImg.src = e.target.src;
-    caption.textContent = e.target.alt;
+/* ===== CONTROLADOR DOS SLIDES (ABA RESUMO) ===== */
+(function() {
+  var slides = document.querySelectorAll("#slideDeckWrapper .web-slide");
+  var counter = document.getElementById("slideCounter");
+  var btnPrev = document.getElementById("slidePrev");
+  var btnNext = document.getElementById("slideNext");
+  var btnFull = document.getElementById("slideFull");
+  var wrapper = document.getElementById("slideDeckWrapper");
+  if (!slides.length) return;
+
+  var idx = 0;
+  function renderSlide(n) {
+    idx = (n + slides.length) % slides.length;
+    slides.forEach(function(s, i) {
+      s.classList.toggle("active", i === idx);
+    });
+    if (counter) counter.textContent = (idx + 1) + " / " + slides.length;
   }
-});
 
-var closeBtn = document.getElementById("closeModal");
-if (closeBtn) {
-  closeBtn.onclick = function() {
-    document.getElementById("imgModal").style.display = "none";
-  };
-}
+  if (btnPrev) btnPrev.onclick = function() { renderSlide(idx - 1); };
+  if (btnNext) btnNext.onclick = function() { renderSlide(idx + 1); };
 
-var modalBg = document.getElementById("imgModal");
-if (modalBg) {
-  modalBg.onclick = function(e) {
-    if (e.target === modalBg) {
-      modalBg.style.display = "none";
-    }
-  };
-}
+  if (wrapper) {
+    wrapper.addEventListener("click", function(e) {
+      if (window.getSelection().toString().trim()) return;
+      var rect = wrapper.getBoundingClientRect();
+      var clickX = e.clientX - rect.left;
+      if (clickX > rect.width * 0.35) {
+        renderSlide(idx + 1);
+      } else {
+        renderSlide(idx - 1);
+      }
+    });
+
+    wrapper.addEventListener("keydown", function(e) {
+      if (e.key === "ArrowRight") renderSlide(idx + 1);
+      if (e.key === "ArrowLeft") renderSlide(idx - 1);
+    });
+  }
+
+  if (btnFull && wrapper) {
+    btnFull.onclick = function() {
+      if (!document.fullscreenElement) {
+        wrapper.requestFullscreen().catch(function(){});
+      } else {
+        document.exitFullscreen();
+      }
+    };
+  }
+
+  renderSlide(0);
+})();

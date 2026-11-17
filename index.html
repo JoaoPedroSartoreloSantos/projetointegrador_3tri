@@ -121,7 +121,7 @@
 <div class="grid">
 <div class="box"><h3>Frequência (Hz)</h3><p>Número de vibrações por segundo. Define se o som é grave (baixa frequência) ou agudo (alta frequência). Uma pessoa com audição típica ouve aproximadamente de 20 Hz a 20 000 Hz.</p></div>
 <div class="box"><h3>Intensidade e nível sonoro (dB)</h3><p>Define se o som é fraco ou forte. O nível sonoro é medido em decibéis, em escala logarítmica: a cada 10 dB a intensidade fica 10 vezes maior. Grave e agudo não é o mesmo que fraco e forte.</p></div>
-<div class="box"><h3>Efeitos do ruído</h3><p>Sons intensos ou exposição prolongada podem causar perda auditiva. Mesmo sem chegar a esse punto, o ruído atrapalha a concentração, aumenta o estresse e causa desconforto.</p></div>
+<div class="box"><h3>Efeitos do ruído</h3><p>Sons intensos ou exposição prolongada podem causar perda auditiva. Mesmo sem chegar a esse ponto, o ruído atrapalha a concentração, aumenta o estresse e causa desconforto.</p></div>
 </div>
 <h3>Quando o som passa a ser risco para a audição?</h3>
 <p>O NIOSH, instituto de saúde ocupacional dos Estados Unidos, recomenda limitar a exposição a 85 dB (ponderado em A) em média por 8 horas. Acima disso, cada aumento de 3 dB reduz pela metade o tempo seguro: 88 dB por 4 horas, 91 dB por 2 horas. O risco depende do volume, do tempo e da frequência da exposição.</p>
@@ -267,49 +267,227 @@ REGRAS:
 <p class="muted">Esta proposta ainda não foi aplicada nem testada.</p>
 </section>
 
-<!-- NOVA ABA: RESUMO -->
+<!-- ABA RESUMO: APRESENTAÇÃO DE SLIDES INTERATIVA -->
 <section class="panel" id="resumo" role="tabpanel" aria-labelledby="t-resumo" hidden>
-<h2>Resumo Geral do Projeto</h2>
-<p>Visão geral dos resultados e principais destaques do nosso Projeto Integrador sobre Acessibilidade e Qualidade de Vida.</p>
+  <div class="slides-header">
+    <div>
+      <h2>Resumo em Slides</h2>
+      <p class="muted">Navegue pelos slides abaixo ou clique em Tela Cheia para apresentar.</p>
+    </div>
+    <div class="slides-controls">
+      <button type="button" id="slidePrev" aria-label="Slide anterior">◀ Anterior</button>
+      <span id="slideCounter" aria-live="polite">1 / 12</span>
+      <button type="button" id="slideNext" aria-label="Próximo slide">Próximo ▶</button>
+      <button type="button" id="slideFull" aria-label="Alternar tela cheia">⛶ Tela cheia</button>
+    </div>
+  </div>
 
-<div class="grid">
-  <div class="box">
-    <h3>🤖 Robótica e Comunicação</h3>
-    <p>Uso de matriz de LEDs, código Morse e display para reduzir barreiras sensoriais e facilitar avisos rápidos.</p>
-  </div>
-  <div class="box">
-    <h3>🎧 Física e Acústica</h3>
-    <p>Medições na escola de 48 dB a 80 dB, mostrando o impacto do ruído na concentração e na sobrecarga sensorial.</p>
-  </div>
-  <div class="box">
-    <h3>💻 Programação e IA</h3>
-    <p>Prototipagem de um Cofre Digital, Refinador de Prompts acessíveis e uma Calculadora Nutricional funcional.</p>
-  </div>
-</div>
+  <div id="slideDeckWrapper" class="deck-viewport" tabindex="0" aria-label="Apresentação de slides. Use as setas esquerda e direita para navegar.">
+    
+    <!-- SLIDE 1 -->
+    <article class="web-slide active is-dark">
+      <p class="sl-eyebrow">Projeto Integrador • 2º Ano C</p>
+      <h3 class="sl-h1">Acessibilidade para a Qualidade de Vida</h3>
+      <p class="sl-lead">Arquitetura web, recursos inclusivos e passo a passo do portal interdisciplinar</p>
+      <div class="sl-bar"></div>
+      <p class="sl-authors">Kawan Henrique • Arthur Antonio • João Pedro Sartorelo Santos • Gabriel Henrique</p>
+    </article>
 
-<h2>Galeria de Fotos / Esquemáticos</h2>
-<p class="muted">Clique em qualquer imagem para ampliar em tela cheia.</p>
-<div class="grid">
-  <figure class="vid">
-    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Esquema de Robótica e Circuitos" class="zoomable-img" style="width:100%; border-radius:8px; cursor:pointer;" />
-    <figcaption>Protótipo de Circuitos e Robótica</figcaption>
-  </figure>
-  <figure class="vid">
-    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Gráficos de Decibéis e Testes" class="zoomable-img" style="width:100%; border-radius:8px; cursor:pointer;" />
-    <figcaption>Análise de Dados de Ruído</figcaption>
-  </figure>
-</div>
+    <!-- SLIDE 2 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Propósito do Portal</p>
+      <h3 class="sl-h2">Questão Norteadora</h3>
+      <div class="sl-center">
+        <blockquote class="sl-quote">
+          “Como a ciência, a tecnologia e as ferramentas de Inteligência Artificial podem contribuir para a melhoria da qualidade de vida das pessoas?”
+        </blockquote>
+        <p class="sl-muted">Integração prática entre Robótica, Física e Programação com foco em inclusão.</p>
+      </div>
+    </article>
+
+    <!-- SLIDE 3 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Estrutura Técnica</p>
+      <h3 class="sl-h2">Arquitetura do Site</h3>
+      <div class="sl-cards-3">
+        <div class="sl-card">
+          <h4>📄 index.html</h4>
+          <p>Semântica WAI-ARIA e abas interativas.</p>
+        </div>
+        <div class="sl-card">
+          <h4>🎨 style.css</h4>
+          <p>Fonte dislexia-friendly e temas claros/escuros.</p>
+        </div>
+        <div class="sl-card">
+          <h4>⚙️ script.js</h4>
+          <p>Síntese de voz e simuladores locais.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 4 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Experiência do Usuário</p>
+      <h3 class="sl-h2">Passo a Passo: Barra Inclusiva</h3>
+      <div class="sl-cards-4">
+        <div class="sl-card">
+          <span class="sl-step">PASSO 01</span>
+          <h4>Atalho de Pulo</h4>
+          <p>Link direto para o conteúdo principal.</p>
+        </div>
+        <div class="sl-card">
+          <span class="sl-step">PASSO 02</span>
+          <h4>Zoom Dinâmico</h4>
+          <p>Escala de fonte entre 80% e 200%.</p>
+        </div>
+        <div class="sl-card">
+          <span class="sl-step">PASSO 03</span>
+          <h4>Leitura em Voz</h4>
+          <p>Web Speech API com velocidade ajustável.</p>
+        </div>
+        <div class="sl-card">
+          <span class="sl-step">PASSO 04</span>
+          <h4>Contraste Adaptativo</h4>
+          <p>Alternância instantânea entre claro e escuro.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 5 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Fluxo de Interação</p>
+      <h3 class="sl-h2">Navegação por Abas e Hash URL</h3>
+      <div class="sl-split">
+        <ul class="sl-list">
+          <li><strong>Troca sem recarregar:</strong> Alterna painéis via JavaScript instantâneo.</li>
+          <li><strong>Sincronia de URL:</strong> Atualiza <code>#robotica</code>, <code>#fisica</code>, <code>#programacao</code> ou <code>#resumo</code>.</li>
+          <li><strong>Controle de áudio:</strong> Interrompe a leitura ao mudar de aba.</li>
+        </ul>
+        <div class="sl-dark-box">
+          <p class="sl-eyebrow">MÓDULOS INTEGRADOS</p>
+          <p>🤖 <strong>Robótica</strong> • Sinais e Comunicação</p>
+          <p>🎧 <strong>Física</strong> • Acústica e Decibéis</p>
+          <p>💻 <strong>Programação</strong> • Segurança, IA e Saúde</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 6 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Aba 01 • Robótica</p>
+      <h3 class="sl-h2">Sinais Visuais e Sonoros que Comunicam</h3>
+      <div class="sl-cards-3">
+        <div class="sl-card">
+          <h4>💡 Matriz de LEDs 8x8</h4>
+          <p>Multiplexação com 16 pinos para formar símbolos.</p>
+        </div>
+        <div class="sl-card">
+          <h4>📡 Tradutor Código Morse</h4>
+          <p>Conversão instantânea de texto em pontos e traços.</p>
+        </div>
+        <div class="sl-card">
+          <h4>🖥️ Display Informativo</h4>
+          <p>Alertas visuais complementados por sinais sonoros.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 7 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Aba 02 • Física e Tecnociência</p>
+      <h3 class="sl-h2">Medição Acústica na Escola (Limite NIOSH: 85 dB)</h3>
+      <div class="sl-bars">
+        <div class="sl-bar-row"><span>Quadra (Recreio)</span><div class="sl-track"><div class="sl-fill warn" style="width:80%">80 dB</div></div></div>
+        <div class="sl-bar-row"><span>Ed. Física (9º ano)</span><div class="sl-track"><div class="sl-fill" style="width:69%">69 dB</div></div></div>
+        <div class="sl-bar-row"><span>Aula vaga (2º Adm)</span><div class="sl-track"><div class="sl-fill" style="width:65%">65 dB</div></div></div>
+        <div class="sl-bar-row"><span>Sala do 2º ano C</span><div class="sl-track"><div class="sl-fill" style="width:55%">55 dB</div></div></div>
+        <div class="sl-bar-row"><span>Informática</span><div class="sl-track"><div class="sl-fill" style="width:52%">52 dB</div></div></div>
+        <div class="sl-bar-row"><span>Secretaria</span><div class="sl-track"><div class="sl-fill" style="width:48%">48 dB</div></div></div>
+      </div>
+    </article>
+
+    <!-- SLIDE 8 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Diagnóstico Sensorial</p>
+      <h3 class="sl-h2">Impacto do Ruído na Inclusão Escolar</h3>
+      <div class="sl-metrics">
+        <div>
+          <span class="sl-big">59,9 dB</span>
+          <p>Média sonora nos 7 locais</p>
+        </div>
+        <div>
+          <span class="sl-big warn-txt">1.600x</span>
+          <p>Mais intensidade no recreio</p>
+        </div>
+        <div>
+          <span class="sl-big">3 Ações</span>
+          <p>Sala calma, acústica e sinais visuais</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 9 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Aba 03 • Programação (Ferramenta 1)</p>
+      <h3 class="sl-h2">Cofre Digital: Criptografia Unicode</h3>
+      <div class="sl-split">
+        <div class="sl-card">
+          <h4>🔒 1. Cifrar Dados</h4>
+          <p>Adiciona assinatura de validação <code>___COFRE_OK___</code>.</p>
+          <p>Soma a chave inteira ao código Unicode de cada letra.</p>
+        </div>
+        <div class="sl-card">
+          <h4>🔓 2. Decifrar e Validar</h4>
+          <p>Subtrai a chave para restaurar o texto original.</p>
+          <p>Bloqueia leitura se a assinatura não corresponder.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 10 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Aba 03 • Programação (Ferramenta 2)</p>
+      <h3 class="sl-h2">Refinador de Prompts para Acessibilidade</h3>
+      <ul class="sl-list sl-center">
+        <li><strong>Leitura Facilitada:</strong> Frases curtas e tópicos claros sem infantilizar.</li>
+        <li><strong>Deficiência Visual:</strong> Estrutura otimizada para leitores NVDA e TalkBack.</li>
+        <li><strong>Escrita Inclusiva:</strong> Remove termos capacitistas e prioriza a pessoa.</li>
+        <li><strong>Trava Anti-Alucinação:</strong> Preserva avisos críticos de segurança médica.</li>
+      </ul>
+    </article>
+
+    <!-- SLIDE 11 -->
+    <article class="web-slide">
+      <p class="sl-eyebrow">Aba 03 • Programação (Ferramenta 3)</p>
+      <h3 class="sl-h2">Calculadora Nutricional e Alertas Clínicos</h3>
+      <div class="wrap">
+        <table>
+          <thead>
+            <tr><th>Alimento (100g)</th><th>Calorias</th><th>Carboidratos</th><th>Proteínas</th><th>Sódio</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Arroz Integral</strong></td><td>124 kcal</td><td>25,8 g</td><td>2,6 g</td><td>1 mg</td></tr>
+            <tr><td><strong>Feijão Preto</strong></td><td>77 kcal</td><td>14,0 g</td><td>4,5 g</td><td>2 mg</td></tr>
+            <tr><td><strong>Peito de Frango</strong></td><td>165 kcal</td><td>0,0 g</td><td>31,0 g</td><td>74 mg</td></tr>
+            <tr><td><strong>Sopa Pronta em Lata</strong></td><td>68 kcal</td><td>9,0 g</td><td>1,5 g</td><td><strong>780 mg (Alerta!)</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sl-muted">Alertas automáticos: sódio &gt; 600 mg (hipertensão) e carboidratos &gt; 50 g (diabetes).</p>
+    </article>
+
+    <!-- SLIDE 12 -->
+    <article class="web-slide is-dark is-center-text">
+      <p class="sl-eyebrow">Conclusão do Projeto Integrador</p>
+      <h3 class="sl-h1">Tecnologia com Ética e Empatia</h3>
+      <p class="sl-lead">Protótipos acessíveis testados no navegador e integrados ao Google Colab para impacto real na comunidade.</p>
+      <div class="sl-bar"></div>
+    </article>
+
+  </div>
 </section>
 
 </main>
-
-<!-- Modal de Tela Cheia para Imagens -->
-<div id="imgModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; flex-direction:column; padding:20px;">
-  <span id="closeModal" style="position:absolute; top:20px; right:30px; color:#fff; font-size:2rem; cursor:pointer; font-weight:bold;">&times;</span>
-  <img id="modalImg" style="max-width:90%; max-height:80vh; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.5);" />
-  <p id="modalCaption" style="color:#fff; margin-top:12px; font-size:1.1rem; text-align:center;"></p>
-</div>
-
 <footer>
 <p>Site feito por Kawan Henrique, Arthur Antonio, João Pedro Sartorelo Santos e Gabriel Henrique (2º ano C), reunindo os projetos de Robótica, Física e Tecnociência e Programação. Desenvolvido com HTML, CSS e JavaScript. A IA Claude (Anthropic) foi usada para solução de bugs.</p>
 </footer>
