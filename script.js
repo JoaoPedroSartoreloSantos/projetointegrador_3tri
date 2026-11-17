@@ -77,7 +77,7 @@ $("nClr").onclick=function(){items=[];$("nG").value="";$("nMsg").textContent="";
 draw();
 })();
 
-var tabs=["robotica","fisica","programacao"];
+var tabs=["robotica","fisica","programacao","resumo"];
 function show(id){
   if(tabs.indexOf(id)<0)id="robotica";
   tabs.forEach(function(t){
@@ -133,3 +133,31 @@ function morse(s){
 var mi=document.getElementById("mIn"),mo=document.getElementById("mOut");
 function upd(){mo.textContent=morse(mi.value);}
 mi.oninput=upd;upd();
+
+// Lógica para abrir imagens em tela cheia (Modal) na aba Resumo
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("zoomable-img")) {
+    var modal = document.getElementById("imgModal");
+    var modalImg = document.getElementById("modalImg");
+    var caption = document.getElementById("modalCaption");
+    modal.style.display = "flex";
+    modalImg.src = e.target.src;
+    caption.textContent = e.target.alt;
+  }
+});
+
+var closeBtn = document.getElementById("closeModal");
+if (closeBtn) {
+  closeBtn.onclick = function() {
+    document.getElementById("imgModal").style.display = "none";
+  };
+}
+
+var modalBg = document.getElementById("imgModal");
+if (modalBg) {
+  modalBg.onclick = function(e) {
+    if (e.target === modalBg) {
+      modalBg.style.display = "none";
+    }
+  };
+}

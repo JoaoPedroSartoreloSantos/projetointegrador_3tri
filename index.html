@@ -26,6 +26,7 @@
 <button role="tab" id="t-robotica" aria-controls="robotica" aria-selected="true">🤖 Robótica</button>
 <button role="tab" id="t-fisica" aria-controls="fisica" aria-selected="false">🎧 Física e Tecnociência</button>
 <button role="tab" id="t-programacao" aria-controls="programacao" aria-selected="false">💻 Programação</button>
+<button role="tab" id="t-resumo" aria-controls="resumo" aria-selected="false">📊 Resumo</button>
 </nav>
 <main id="main">
 
@@ -120,7 +121,7 @@
 <div class="grid">
 <div class="box"><h3>Frequência (Hz)</h3><p>Número de vibrações por segundo. Define se o som é grave (baixa frequência) ou agudo (alta frequência). Uma pessoa com audição típica ouve aproximadamente de 20 Hz a 20 000 Hz.</p></div>
 <div class="box"><h3>Intensidade e nível sonoro (dB)</h3><p>Define se o som é fraco ou forte. O nível sonoro é medido em decibéis, em escala logarítmica: a cada 10 dB a intensidade fica 10 vezes maior. Grave e agudo não é o mesmo que fraco e forte.</p></div>
-<div class="box"><h3>Efeitos do ruído</h3><p>Sons intensos ou exposição prolongada podem causar perda auditiva. Mesmo sem chegar a esse ponto, o ruído atrapalha a concentração, aumenta o estresse e causa desconforto.</p></div>
+<div class="box"><h3>Efeitos do ruído</h3><p>Sons intensos ou exposição prolongada podem causar perda auditiva. Mesmo sem chegar a esse punto, o ruído atrapalha a concentração, aumenta o estresse e causa desconforto.</p></div>
 </div>
 <h3>Quando o som passa a ser risco para a audição?</h3>
 <p>O NIOSH, instituto de saúde ocupacional dos Estados Unidos, recomenda limitar a exposição a 85 dB (ponderado em A) em média por 8 horas. Acima disso, cada aumento de 3 dB reduz pela metade o tempo seguro: 88 dB por 4 horas, 91 dB por 2 horas. O risco depende do volume, do tempo e da frequência da exposição.</p>
@@ -179,6 +180,7 @@
 <li>______. <strong>Understanding noise exposure limits</strong>: occupational vs. general environmental noise. [S. l.]: Centers for Disease Control and Prevention, 2016. Disponível em: https://cdc.gov/niosh/bulletin/2016/noise.html. Acesso em: 15 nov. 2026.</li>
 </ul>
 </section>
+
 <section class="panel" id="programacao" role="tabpanel" aria-labelledby="t-programacao" hidden>
 <h2>Programação: tecnologia, ética e qualidade de vida</h2>
 <p>Usamos Python e IA para criar protótipos que melhoram a acessibilidade e a qualidade de vida, em três eixos: segurança da informação, inteligência artificial e saúde e nutrição. As três ferramentas abaixo estão funcionando aqui na página, é só testar. O Claude foi usado para solução de bugs no código.</p>
@@ -264,7 +266,50 @@ REGRAS:
 </ul>
 <p class="muted">Esta proposta ainda não foi aplicada nem testada.</p>
 </section>
+
+<!-- NOVA ABA: RESUMO -->
+<section class="panel" id="resumo" role="tabpanel" aria-labelledby="t-resumo" hidden>
+<h2>Resumo Geral do Projeto</h2>
+<p>Visão geral dos resultados e principais destaques do nosso Projeto Integrador sobre Acessibilidade e Qualidade de Vida.</p>
+
+<div class="grid">
+  <div class="box">
+    <h3>🤖 Robótica e Comunicação</h3>
+    <p>Uso de matriz de LEDs, código Morse e display para reduzir barreiras sensoriais e facilitar avisos rápidos.</p>
+  </div>
+  <div class="box">
+    <h3>🎧 Física e Acústica</h3>
+    <p>Medições na escola de 48 dB a 80 dB, mostrando o impacto do ruído na concentração e na sobrecarga sensorial.</p>
+  </div>
+  <div class="box">
+    <h3>💻 Programação e IA</h3>
+    <p>Prototipagem de um Cofre Digital, Refinador de Prompts acessíveis e uma Calculadora Nutricional funcional.</p>
+  </div>
+</div>
+
+<h2>Galeria de Fotos / Esquemáticos</h2>
+<p class="muted">Clique em qualquer imagem para ampliar em tela cheia.</p>
+<div class="grid">
+  <figure class="vid">
+    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Esquema de Robótica e Circuitos" class="zoomable-img" style="width:100%; border-radius:8px; cursor:pointer;" />
+    <figcaption>Protótipo de Circuitos e Robótica</figcaption>
+  </figure>
+  <figure class="vid">
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Gráficos de Decibéis e Testes" class="zoomable-img" style="width:100%; border-radius:8px; cursor:pointer;" />
+    <figcaption>Análise de Dados de Ruído</figcaption>
+  </figure>
+</div>
+</section>
+
 </main>
+
+<!-- Modal de Tela Cheia para Imagens -->
+<div id="imgModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; flex-direction:column; padding:20px;">
+  <span id="closeModal" style="position:absolute; top:20px; right:30px; color:#fff; font-size:2rem; cursor:pointer; font-weight:bold;">&times;</span>
+  <img id="modalImg" style="max-width:90%; max-height:80vh; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.5);" />
+  <p id="modalCaption" style="color:#fff; margin-top:12px; font-size:1.1rem; text-align:center;"></p>
+</div>
+
 <footer>
 <p>Site feito por Kawan Henrique, Arthur Antonio, João Pedro Sartorelo Santos e Gabriel Henrique (2º ano C), reunindo os projetos de Robótica, Física e Tecnociência e Programação. Desenvolvido com HTML, CSS e JavaScript. A IA Claude (Anthropic) foi usada para solução de bugs.</p>
 </footer>

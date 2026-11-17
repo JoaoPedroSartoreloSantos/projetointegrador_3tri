@@ -78,3 +78,7 @@ nav button{transition:background .15s}nav button:hover{color:var(--ink)}nav butt
 th{background:var(--accent);color:var(--accent-ink)}
 tbody tr:nth-child(even) td:not(.todo){background:var(--bg)}
 footer{border-top:1px solid var(--line);padding-top:20px}
+
+/* Estilo para imagens com zoom na aba Resumo */
+.zoomable-img { transition: transform 0.2s ease; }
+.zoomable-img:hover { transform: scale(1.02); }
